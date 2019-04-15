@@ -100,12 +100,12 @@ function analysis(data){
       
         obj2.status = data.storage[j].status;
          if(obj2.status == 1){
-             obj2.symbol = 'image://images/A1.png';
+             obj2.symbol = 'image://images/A3.png';
         }
        else if (obj2.status == 2) {
-         obj2.symbol = 'image://images/C1.png';
+         obj2.symbol = 'image://images/C3.png';
        }else if (obj2.status == 3) {
-             obj2.symbol = 'image://images/B1.png';
+             obj2.symbol = 'image://images/B3.png';
          }
         end_obj2.push(obj2);
     };
@@ -129,11 +129,11 @@ function analysis(data){
          }
         obj3.status=data.switchs[k].status;
          if(obj3.status==1){
-             obj3.symbol = 'image://images/A1.png';
+             obj3.symbol = 'image://images/A2.png';
          }else if (obj3.status==2){
-             obj3.symbol = 'image://images/C1.png';
+             obj3.symbol = 'image://images/C2.png';
          }else if(obj3.status==3){
-             obj3.symbol = 'image://images/B1.png';
+             obj3.symbol = 'image://images/B2.png';
          }
         end_obj3.push(obj3);
     };
@@ -158,11 +158,11 @@ function analysis(data){
         }
         obj4.status=data.database[k].status;
         if(obj4.status==1){
-            obj4.symbol = 'image://images/A2.png';
+            obj4.symbol = 'image://images/deta.png';
         }else if (obj4.status==2){
-            obj4.symbol = 'image://images/C2.png';
+            obj4.symbol = 'image://images/deta.png';
         }else if(obj4.status==3){
-            obj4.symbol = 'image://images/B2.png';
+            obj4.symbol = 'image://images/deta.png';
         }
 
         end_obj4.push(obj4);
@@ -198,7 +198,7 @@ $(document).ready(function () {
 
        var option = {
             title: {
-                text: '体系结构图'
+               // text: '体系结构图'
             },
             tooltip : {
                 trigger: 'item',
@@ -212,25 +212,45 @@ $(document).ready(function () {
                     }
                 }
             },
+           legend: {
+           },
 
-            animationDurationUpdate: 1500,
+            animationDurationUpdate: 1000,
             animationEasingUpdate: 'quinticInOut',
             series: [
                 {
                     type: 'graph',
                     layout: 'none',
-                    roam: true,
+                    roam: false,
                     focusNodeAdjacency: true,
+                    itemStyle: {
+                        normal: {
+                            borderColor: '#fff',
+                            borderWidth: 1,
+                            shadowBlur: 1,
+                            shadowColor: 'rgba(0, 0, 0, 0.3)'
+                        },
+
+                    },
+
+
                     label: {
                         normal: {
                             show: true,
                             position: 'right',
+                            backgroundColor:'#f4f6fa',
 
                             textStyle:{
                                 fontSize:12,
                                  color:'#666666',
                             }
-                        }
+                        },
+                        emphasis: {
+                           lineStyle:{
+                               color: '#ff4c61'
+                           },
+
+                        },
 
                     },
                     edgeSymbol: ['arrow', 'arrow'],
@@ -239,13 +259,19 @@ $(document).ready(function () {
                     lineStyle: {
                         normal: {
                             opacity: 0.6,
-                            width: 2,
-                            curveness: 0.1,
-                            color: '#0fff17' ,
+                            width: 1,
+                            curveness: 0.2,
+                            color: '#a8b2cb' ,
                         },
-
+                        emphasis: {
+                            color: '#ff4c61'
+                        },
                     },
-
+                    emphasis: {
+                        lineStyle: {
+                            color: '#ff4c61',
+                        }
+                    },
 
 
                     data:[],
