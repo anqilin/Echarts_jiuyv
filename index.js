@@ -223,34 +223,20 @@ $(document).ready(function () {
                     layout: 'none',
                     roam: false,
                     focusNodeAdjacency: true,
-                    itemStyle: {
-                        normal: {
-                            borderColor: '#fff',
-                            borderWidth: 1,
-                            shadowBlur: 1,
-                            shadowColor: 'rgba(0, 0, 0, 0.3)'
-                        },
-
-                    },
 
 
                     label: {
                         normal: {
                             show: true,
                             position: 'right',
-                            backgroundColor:'#f4f6fa',
+                           // backgroundColor:'#f4f6fa',
 
                             textStyle:{
                                 fontSize:12,
                                  color:'#666666',
                             }
                         },
-                        emphasis: {
-                           lineStyle:{
-                               color: '#ff4c61'
-                           },
 
-                        },
 
                     },
                     edgeSymbol: ['arrow', 'arrow'],
@@ -258,7 +244,8 @@ $(document).ready(function () {
                     constantSpeed: 30,
                     lineStyle: {
                         normal: {
-                            opacity: 0.6,
+                           // opacity: 0.6,
+                            //type: 'dashed',
                             width: 1,
                             curveness: 0.2,
                             color: '#a8b2cb' ,
@@ -266,11 +253,6 @@ $(document).ready(function () {
                         emphasis: {
                             color: '#ff4c61'
                         },
-                    },
-                    emphasis: {
-                        lineStyle: {
-                            color: '#ff4c61',
-                        }
                     },
 
 
